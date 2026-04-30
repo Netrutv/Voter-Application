@@ -11,7 +11,7 @@ router.get('/download-voters', async (req, res) => {
         const voters = await Voter.find({ 
             isDeleted: { $ne: true } // Handles existing 50k records without this field
         })
-        .select('name epic_id age gender isVoted part mahanagarpalika')
+        .select('name voter_name epic_id age gender isVoted part mahanagarpalika srNo fatherName yadi_bhag')
         .skip(skip)
         .limit(limit)
         .lean();
